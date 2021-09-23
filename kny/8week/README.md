@@ -41,3 +41,4 @@
 
 ## 8week_ny2.py
 ### https://programmers.co.kr/learn/courses/30/lessons/67256
+스마트폰 전화 키패드의 각 칸에 다음과 같이 숫자들이 적혀 있습니다.
