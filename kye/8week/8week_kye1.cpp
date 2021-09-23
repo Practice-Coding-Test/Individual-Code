@@ -13,7 +13,7 @@ int parent[53];
 
 char trans(char a)
 {
-	//¹®ÀÚ¸¦ ¼ıÀÚ·Î º¯È¯ÇÏ´Â ÇÔ¼ö
+	//ë¬¸ìë¥¼ ìˆ«ìë¡œ ë³€í™˜í•˜ëŠ” í•¨ìˆ˜
 	if (a <= 'Z')
 		return a - 'A';
 	else
@@ -34,10 +34,10 @@ int main()
 
 		a = trans(a);
 		b = trans(b);
-		//¾ç¹æÇâÀ¸·Î Èå¸£´Ï±î ¼­·Î ¿¬°á½ÃÄÑ ÁØ´Ù.
+		//ì–‘ë°©í–¥ìœ¼ë¡œ íë¥´ë‹ˆê¹Œ ì„œë¡œ ì—°ê²°ì‹œì¼œ ì¤€ë‹¤.
 		graph[a].push_back(b);
 		graph[b].push_back(a);
-		capacity[a][b] += f;//=f¾Æ´Ï°í ²À ´õÇØ¾ßÇÑ´Ù...¶È°°Àº ³ëµå¹øÈ£ ÁÖÁö ¾Ê´Â´Ù°í ÇÑ ¸»ÀÌ ¾øÀ¸´Ï±î......
+		capacity[a][b] += f;//=fì•„ë‹ˆê³  ê¼­ ë”í•´ì•¼í•œë‹¤...ë˜‘ê°™ì€ ë…¸ë“œë²ˆí˜¸ ì£¼ì§€ ì•ŠëŠ”ë‹¤ê³  í•œ ë§ì´ ì—†ìœ¼ë‹ˆê¹Œ......
 		capacity[b][a] += f;
 	}
 	int start = trans('A');
@@ -51,32 +51,32 @@ int main()
 		{
 			int u = q.front();
 			q.pop();
-			if (u == dest)//µµÂø ³ëµå¿¡ µµÂøÇßÀ¸¸é ³¡
+			if (u == dest)//ë„ì°© ë…¸ë“œì— ë„ì°©í–ˆìœ¼ë©´ ë
 				break;
 			for (int i = 0; i < graph[u].size(); i++)
 			{
 				int v = graph[u][i];
-				if ((parent[v] == -1) && (capacity[u][v] - flow[u][v] > 0))//¾ÆÁ÷ °æ·Î¼±ÅÃ ¾ÈµÇ¾îÀÖ°í, ¿ë·®ÀÌ ³²¾Æ ÀÖ´Ù¸é
+				if ((parent[v] == -1) && (capacity[u][v] - flow[u][v] > 0))//ì•„ì§ ê²½ë¡œì„ íƒ ì•ˆë˜ì–´ìˆê³ , ìš©ëŸ‰ì´ ë‚¨ì•„ ìˆë‹¤ë©´
 				{
-					parent[v] = u;//vÀÇ ºÎ¸ğ³ëµå´Â u
+					parent[v] = u;//vì˜ ë¶€ëª¨ë…¸ë“œëŠ” u
 					q.push(v);
 				}
 			}
 		}
-		if (parent[dest] == -1)//¸¸¾à Á¾Á¡±îÁö °¡Áö ¸øÇß´Ù¸é °æ·Î°¡ ¾ø´Ù´Â °Í
+		if (parent[dest] == -1)//ë§Œì•½ ì¢…ì ê¹Œì§€ ê°€ì§€ ëª»í–ˆë‹¤ë©´ ê²½ë¡œê°€ ì—†ë‹¤ëŠ” ê²ƒ
 			break;
 
 
-		//Èå¸¦ ¼ö ÀÖ´Â ÃÖ¼Ò À¯·®À» Ã£´Â´Ù
+		//íë¥¼ ìˆ˜ ìˆëŠ” ìµœì†Œ ìœ ëŸ‰ì„ ì°¾ëŠ”ë‹¤
 		int minflow = 987654321;
-		for (int i = dest; i != start; i = parent[i])//ºÎ¸ğ³ëµå¸¦ Ã£¾Æ°£´Ù
+		for (int i = dest; i != start; i = parent[i])//ë¶€ëª¨ë…¸ë“œë¥¼ ì°¾ì•„ê°„ë‹¤
 		{
-			minflow = min(minflow, capacity[parent[i]][i] - flow[parent[i]][i]);//³²Àº ÃÖ¼Ò¿ë·®À» Ã£´Â´Ù
+			minflow = min(minflow, capacity[parent[i]][i] - flow[parent[i]][i]);//ë‚¨ì€ ìµœì†Œìš©ëŸ‰ì„ ì°¾ëŠ”ë‹¤
 		}
 		for (int i = dest; i != start; i = parent[i])
 		{
-			flow[parent[i]][i] += minflow;//Áö±İ±îÁö Èå¸¥ ¾ç ´õÇØÁØ´Ù
-			flow[i][parent[i]] -= minflow;//ÀÚ½Ä³ëµå¿¡¼­ ºÎ¸ğ³ëµå·Î´Â À½ÀÇ °ªÀ» ´õÇØÁØ´Ù.
+			flow[parent[i]][i] += minflow;//ì§€ê¸ˆê¹Œì§€ íë¥¸ ì–‘ ë”í•´ì¤€ë‹¤
+			flow[i][parent[i]] -= minflow;//ìì‹ë…¸ë“œì—ì„œ ë¶€ëª¨ë…¸ë“œë¡œëŠ” ìŒì˜ ê°’ì„ ë”í•´ì¤€ë‹¤.
 		}
 		result += minflow;
 	}
