@@ -42,7 +42,7 @@
 ## 8week_ny2.py
 ### https://programmers.co.kr/learn/courses/30/lessons/67256
 스마트폰 전화 키패드의 각 칸에 다음과 같이 숫자들이 적혀 있습니다.<br>
-<img src = 'https://user-images.githubusercontent.com/88240443/134506404-eaa6de3a-8bba-42d4-94d9-ba16adbafdaa.png' width = '50%'><br>
+<img src = 'https://user-images.githubusercontent.com/88240443/134506404-eaa6de3a-8bba-42d4-94d9-ba16adbafdaa.png' width = '50%' height = '70%'><br>
 이 전화 키패드에서 왼손과 오른손의 엄지손가락만을 이용해서 숫자만을 입력하려고 합니다.<br>
 맨 처음 왼손 엄지손가락은 * 키패드에 오른손 엄지손가락은 # 키패드 위치에서 시작하며, 엄지손가락을 사용하는 규칙은 다음과 같습니다.<br>
 
