@@ -42,3 +42,4 @@
 ## 8week_ny2.py
 ### https://programmers.co.kr/learn/courses/30/lessons/67256
 스마트폰 전화 키패드의 각 칸에 다음과 같이 숫자들이 적혀 있습니다.
+<img src = 'https://user-images.githubusercontent.com/88240443/134506404-eaa6de3a-8bba-42d4-94d9-ba16adbafdaa.png')
