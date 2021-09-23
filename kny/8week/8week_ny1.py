@@ -13,7 +13,7 @@
 #     name: python3
 # ---
 
-# +
+
 import numpy as np
 
 def solution(scores):
@@ -44,6 +44,6 @@ def solution(scores):
     return answer
 
 
-# -
+
 
 solution(scores)
