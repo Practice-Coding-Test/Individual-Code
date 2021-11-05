@@ -19,10 +19,10 @@ vector<string> solution(vector<vector<int>>line)
 			long long a = line[i][0], b = line[i][1], e = line[i][2];
 			long long c = line[j][0], d = line[j][1], f = line[j][2];
 			long long under = line[i][0] * line[j][1] * 1LL - line[i][1] * line[j][0] * 1LL;
-			if (under == 0)//i¹øÂ° Á÷¼±°ú j¹øÂ° Á÷¼±ÀÌ ÆòÇàÀÌ°Å³ª ÀÏÄ¡ÇÏ´Â °æ¿ì
+			if (under == 0)//ië²ˆì§¸ ì§ì„ ê³¼ jë²ˆì§¸ ì§ì„ ì´ í‰í–‰ì´ê±°ë‚˜ ì¼ì¹˜í•˜ëŠ” ê²½ìš°
 				continue;
 			if ((b * f * 1LL - e * d * 1LL) % under ||
-				(e * c * 1LL - a * f * 1LL) % under)//Á¤¼ö ±³Á¡¸¸ Ã£±â
+				(e * c * 1LL - a * f * 1LL) % under)//ì •ìˆ˜ êµì ë§Œ ì°¾ê¸°
 			{
 				continue;
 			}
@@ -41,7 +41,7 @@ vector<string> solution(vector<vector<int>>line)
 	vector<string>answer(maxy - miny + 1, a);
 	for (auto i : cross)
 	{
-		answer[abs(i.second - maxy)][abs(i.first - minx)] = '*';//""¿Í ''ÀÇ Â÷ÀÌ
+		answer[abs(i.second - maxy)][abs(i.first - minx)] = '*';//""ì™€ ''ì˜ ì°¨ì´
 	}
 
 	return answer;
