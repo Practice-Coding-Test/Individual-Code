@@ -1,4 +1,4 @@
-/*#include<iostream>
+#include<iostream>
 #include<vector>
 #include<algorithm>
 #include<stack>
@@ -79,4 +79,4 @@ int main()
 	distance += dist(start, end);
 	cout.precision(2);
 	cout << fixed << distance;
-}*/
+}
