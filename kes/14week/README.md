@@ -20,7 +20,6 @@
 |5|[2, 4]|[3]|4|
 |5|[3]|[1]|2|
 
-
 ## 14week-2
 [구명보트: 문제 보기](https://programmers.co.kr/learn/courses/30/lessons/42885?language=python3)
 ### 문제 설명
