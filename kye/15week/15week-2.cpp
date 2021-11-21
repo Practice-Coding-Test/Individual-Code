@@ -36,7 +36,7 @@ int checkdist()
 		ans += result;
 
 	}
-	//cout << "���պ� �ּҰŸ�" << ans << "\n";
+	//cout << "Á¶ÇÕº° ÃÖ¼Ò°Å¸®" << ans << "\n";
 	select_chicken.clear();
 	return ans;
 }
