@@ -11,7 +11,6 @@ int xx[] = { 0,0,1,-1 };
 int yy[] = { 1,-1,0,0 };
 int bfs(int x, int y)
 {
-	cout << "½ÃÀÛ" << x << " " << y << "\n";
 	int distance = 0;
 	int visited[50][50] = { 0, };
 	queue<pair<int,int>>q;
